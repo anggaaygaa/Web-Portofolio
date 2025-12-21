@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact - Angga Yoga Syahputra">
+    <title>Angga Yoga | Contact</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Cursor Glow Effect -->
+    <div class="cursor-glow"></div>
+
+    <!-- Particle Background -->
+    <div class="particles"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">Angga Yoga</a>
+
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="skills.html" class="nav-link">Skills</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+
+            <button class="nav-toggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="section" style="padding-top: 120px;">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Get In <span class="gradient-text">Touch</span></h2>
+                <p>Punya pertanyaan atau ingin berkolaborasi? Hubungi saya!</p>
+            </div>
+
+            <div class="contact-content">
+                <!-- Contact Info -->
+                <div class="contact-info reveal">
+                    <h3>Mari <span class="gradient-text-secondary">Terhubung</span></h3>
+                    <p>
+                        Saya selalu senang mendengar dari Anda! Baik itu untuk diskusi
+                        project, peluang kolaborasi, atau sekadar say hello, jangan ragu
+                        untuk menghubungi saya.
+                    </p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p>anggayoga193@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div class="contact-text">
+                                <h4>WhatsApp</h4>
+                                <p>+62 831-0840-9959</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-text">
+                                <h4>Location</h4>
+                                <p>Kota Malang, Jawa Timur</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">🎓</div>
+                            <div class="contact-text">
+                                <h4>Campus</h4>
+                                <p>Universitas Brawijaya</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 style="margin-bottom: 1rem;">Follow Me</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/anggayoga" class="btn-icon" title="GitHub" target="_blank">
+                            <span style="font-size: 1.2rem;">🐙</span>
+                        </a>
+                        <a href="https://linkedin.com/in/anggayoga" class="btn-icon" title="LinkedIn" target="_blank">
+                            <span style="font-size: 1.2rem;">💼</span>
+                        </a>
+                        <a href="https://instagram.com/anggayoga" class="btn-icon" title="Instagram" target="_blank">
+                            <span style="font-size: 1.2rem;">📸</span>
+                        </a>
+                        <a href="https://wa.me/6283108409959" class="btn-icon" title="WhatsApp" target="_blank">
+                            <span style="font-size: 1.2rem;">💬</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="card contact-form reveal">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap *</label>
+                            <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required>
+                            <span class="error-message">Nama wajib diisi</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" placeholder="email@example.com" required>
+                            <span class="error-message">Email tidak valid</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subjek</label>
+                            <input type="text" id="subject" name="subject" placeholder="Subjek pesan Anda">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Pesan *</label>
+                            <textarea id="message" name="message" placeholder="Tulis pesan Anda di sini..."
+                                required></textarea>
+                            <span class="error-message">Pesan wajib diisi</span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary form-submit">
+                            Kirim Pesan 📨
+                        </button>
+                    </form>
+
+                    <!-- Success Message -->
+                    <div class="form-success">
+                        <div class="form-success-icon">✅</div>
+                        <h3>Pesan Terkirim!</h3>
+                        <p>Terima kasih telah menghubungi saya. Saya akan segera membalas pesan Anda.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Frequently <span class="gradient-text">Asked Questions</span></h2>
+                <p>Beberapa pertanyaan yang sering ditanyakan</p>
+            </div>
+
+            <div class="skills-grid reveal">
+                <div class="card">
+                    <h4 style="margin-bottom: 0.5rem;">💬 Berapa lama waktu response?</h4>
+                    <p style="font-size: 0.95rem;">Biasanya saya akan membalas dalam 24-48 jam.</p>
+                </div>
+                <div class="card card-purple">
+                    <h4 style="margin-bottom: 0.5rem;">🤝 Bisa kolaborasi project?</h4>
+                    <p style="font-size: 0.95rem;">Tentu! Saya terbuka untuk kolaborasi di bidang web, IoT, dan AI.</p>
+                </div>
+                <div class="card">
+                    <h4 style="margin-bottom: 0.5rem;">📚 Bisa sharing knowledge?</h4>
+                    <p style="font-size: 0.95rem;">Ya! Saya senang berdiskusi dan berbagi tentang teknologi.</p>
+                </div>
+                <div class="card card-purple">
+                    <h4 style="margin-bottom: 0.5rem;">🎓 Bisa bantu tugas kuliah?</h4>
+                    <p style="font-size: 0.95rem;">Mari diskusi! Tapi ingat, belajar sendiri itu lebih baik 😊</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Placeholder -->
+    <section class="section">
+        <div class="container">
+            <div class="card reveal" style="padding: 0; overflow: hidden; height: 300px;">
+                <div style="
+                    width: 100%; 
+                    height: 100%; 
+                    background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary));
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    gap: 1rem;
+                ">
+                    <span style="font-size: 4rem;">🗺️</span>
+                    <p>Kota Malang, Jawa Timur</p>
+                    <a href="https://maps.google.com/maps?q=Universitas+Brawijaya+Malang" target="_blank"
+                        class="btn btn-secondary">
+                        Lihat di Google Maps 📍
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Angga Yoga Syahputra. Dibuat dengan ❤️ menggunakan HTML, CSS & JavaScript</p>
+            <div class="footer-links">
+                <a href="https://github.com/anggayoga" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/anggayoga" target="_blank">LinkedIn</a>
+                <a href="https://instagram.com/anggayoga" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" aria-label="Scroll to top">↑</button>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
