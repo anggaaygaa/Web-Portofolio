@@ -323,7 +323,7 @@ function initContactForm() {
     });
 
     // Form submission
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
         const isNameValid = validateInput(nameInput);
@@ -331,27 +331,49 @@ function initContactForm() {
         const isMessageValid = validateInput(messageInput);
 
         if (isNameValid && isEmailValid && isMessageValid) {
-            // Simulate form submission
             const submitBtn = form.querySelector('.form-submit');
+            const originalText = submitBtn.innerHTML;
             submitBtn.innerHTML = '<span class="spinner"></span> Mengirim...';
             submitBtn.disabled = true;
 
-            setTimeout(() => {
-                // Show success message
-                form.style.display = 'none';
-                successMessage?.classList.add('show');
+            try {
+                // Actually send form data to Formspree
+                const formData = new FormData(form);
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
 
-                // Reset form
-                form.reset();
-                submitBtn.innerHTML = 'Kirim Pesan';
+                if (response.ok) {
+                    // Show success message
+                    form.style.display = 'none';
+                    successMessage?.classList.add('show');
+                    form.reset();
+
+                    // Trigger confetti celebration!
+                    if (window.triggerConfetti) {
+                        window.triggerConfetti();
+                    }
+
+                    // Hide success after delay
+                    setTimeout(() => {
+                        successMessage?.classList.remove('show');
+                        form.style.display = 'block';
+                    }, 5000);
+                } else {
+                    // Show error
+                    alert('Gagal mengirim pesan. Silakan coba lagi.');
+                }
+            } catch (error) {
+                console.error('Form submission error:', error);
+                alert('Terjadi kesalahan. Silakan coba lagi.');
+            } finally {
+                submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
-
-                // Hide success after delay
-                setTimeout(() => {
-                    successMessage?.classList.remove('show');
-                    form.style.display = 'block';
-                }, 5000);
-            }, 1500);
+            }
         }
     });
 }
@@ -602,5 +624,335 @@ document.addEventListener('DOMContentLoaded', function () {
     initEnhancedCursorGlow();
     initTextScramble();
     initGlowingPercent();
+    initSpotlightEffect();
 });
 
+// Spotlight Effect for Cards
+function initSpotlightEffect() {
+    const cards = document.querySelectorAll('.card, .project-card, .stat-item, .achievement-badge');
+
+    cards.forEach(card => {
+        card.addEventListener('mousemove', function (e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            this.style.setProperty('--mouse-x', `${x}px`);
+            this.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
+}
+
+// Stagger Animation for List Items
+function initStaggerAnimation() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationDelay = `${index * 0.1}s`;
+                entry.target.classList.add('animate-in');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.skill-item, .timeline-item, .tech-item').forEach(item => {
+        observer.observe(item);
+    });
+}
+
+// Initialize stagger animation
+document.addEventListener('DOMContentLoaded', initStaggerAnimation);
+
+/* ========================================
+   ADVANCED FEATURES
+======================================== */
+
+// ===== SCROLL PROGRESS BAR =====
+function initScrollProgress() {
+    const progressBar = document.createElement('div');
+    progressBar.className = 'scroll-progress';
+    document.body.appendChild(progressBar);
+
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        progressBar.style.width = scrollPercent + '%';
+    });
+}
+
+// ===== THEME TOGGLE (DARK/LIGHT MODE) =====
+function initThemeToggle() {
+    // Create theme toggle button
+    const themeToggle = document.createElement('button');
+    themeToggle.className = 'theme-toggle';
+    themeToggle.innerHTML = '<span class="icon-moon">🌙</span><span class="icon-sun">☀️</span>';
+    themeToggle.setAttribute('aria-label', 'Toggle theme');
+    document.body.appendChild(themeToggle);
+
+    // Get saved theme or default to dark
+    const savedTheme = localStorage.getItem('portfolio_theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('portfolio_theme', newTheme);
+
+        // Add rotation animation
+        themeToggle.style.transform = 'scale(1.2) rotate(360deg)';
+        setTimeout(() => {
+            themeToggle.style.transform = '';
+        }, 300);
+    });
+}
+
+// ===== CONFETTI EFFECT =====
+function triggerConfetti() {
+    const container = document.createElement('div');
+    container.className = 'confetti-container';
+    document.body.appendChild(container);
+
+    const colors = ['#00d4ff', '#00ff88', '#8b5cf6', '#ec4899', '#f97316', '#fbbf24'];
+    const shapes = ['square', 'circle'];
+
+    for (let i = 0; i < 100; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = Math.random() * 100 + '%';
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.animationDelay = Math.random() * 0.5 + 's';
+        confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+
+        if (shapes[Math.floor(Math.random() * shapes.length)] === 'circle') {
+            confetti.style.borderRadius = '50%';
+        }
+
+        container.appendChild(confetti);
+    }
+
+    // Remove container after animation
+    setTimeout(() => {
+        container.remove();
+    }, 4000);
+}
+
+// ===== CUSTOM ANIMATED CURSOR =====
+function initCustomCursor() {
+    // Only on desktop
+    if (window.innerWidth <= 768) return;
+
+    const cursor = document.createElement('div');
+    cursor.className = 'custom-cursor';
+    document.body.appendChild(cursor);
+
+    const cursorDot = document.createElement('div');
+    cursorDot.className = 'custom-cursor-dot';
+    document.body.appendChild(cursorDot);
+
+    let mouseX = 0, mouseY = 0;
+    let cursorX = 0, cursorY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        cursorDot.style.left = mouseX + 'px';
+        cursorDot.style.top = mouseY + 'px';
+    });
+
+    // Smooth cursor follow
+    function animateCursor() {
+        cursorX += (mouseX - cursorX) * 0.1;
+        cursorY += (mouseY - cursorY) * 0.1;
+        cursor.style.left = cursorX + 'px';
+        cursor.style.top = cursorY + 'px';
+        requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // Hover effect on interactive elements
+    const hoverElements = document.querySelectorAll('a, button, .card, .project-card, input, textarea');
+    hoverElements.forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    });
+
+    // Hide default cursor
+    document.body.style.cursor = 'none';
+    document.querySelectorAll('a, button').forEach(el => {
+        el.style.cursor = 'none';
+    });
+}
+
+// ===== IMAGE LIGHTBOX =====
+function initLightbox() {
+    // Create lightbox container
+    const lightbox = document.createElement('div');
+    lightbox.className = 'lightbox';
+    lightbox.innerHTML = `
+        <button class="lightbox-close">&times;</button>
+        <img src="" alt="Enlarged image">
+    `;
+    document.body.appendChild(lightbox);
+
+    const lightboxImg = lightbox.querySelector('img');
+    const closeBtn = lightbox.querySelector('.lightbox-close');
+
+    // Add click handlers to project images
+    document.querySelectorAll('.project-card img, .hero-avatar img, .about-image img').forEach(img => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', () => {
+            lightboxImg.src = img.src;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    // Close lightbox
+    closeBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+    });
+
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+// ===== LAZY LOADING IMAGES =====
+function initLazyLoading() {
+    const images = document.querySelectorAll('img[loading="lazy"]');
+
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.classList.add('loaded');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+
+        images.forEach(img => imageObserver.observe(img));
+    } else {
+        // Fallback
+        images.forEach(img => img.classList.add('loaded'));
+    }
+}
+
+// ===== SHARE BUTTONS =====
+function initShareButtons() {
+    const shareContainers = document.querySelectorAll('.share-buttons');
+
+    shareContainers.forEach(container => {
+        container.querySelectorAll('.share-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const pageUrl = encodeURIComponent(window.location.href);
+                const pageTitle = encodeURIComponent(document.title);
+                let shareUrl = '';
+
+                if (btn.classList.contains('twitter')) {
+                    shareUrl = `https://twitter.com/intent/tweet?url=${pageUrl}&text=${pageTitle}`;
+                } else if (btn.classList.contains('facebook')) {
+                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
+                } else if (btn.classList.contains('linkedin')) {
+                    shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}`;
+                } else if (btn.classList.contains('whatsapp')) {
+                    shareUrl = `https://api.whatsapp.com/send?text=${pageTitle}%20${pageUrl}`;
+                } else if (btn.classList.contains('copy')) {
+                    navigator.clipboard.writeText(window.location.href);
+                    btn.innerHTML = '✓';
+                    setTimeout(() => btn.innerHTML = '🔗', 2000);
+                    return;
+                }
+
+                if (shareUrl) {
+                    window.open(shareUrl, '_blank', 'width=600,height=400');
+                }
+            });
+        });
+    });
+}
+
+// ===== PWA INSTALL PROMPT =====
+let deferredPrompt;
+
+function initPWA() {
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        showInstallPrompt();
+    });
+}
+
+function showInstallPrompt() {
+    // Don't show if already dismissed
+    if (localStorage.getItem('pwa_dismissed')) return;
+
+    const prompt = document.createElement('div');
+    prompt.className = 'pwa-install-prompt';
+    prompt.innerHTML = `
+        <span>📱 Install app for better experience!</span>
+        <button class="pwa-install-btn">Install</button>
+        <button class="pwa-dismiss">×</button>
+    `;
+    document.body.appendChild(prompt);
+
+    prompt.querySelector('.pwa-install-btn').addEventListener('click', async () => {
+        if (deferredPrompt) {
+            deferredPrompt.prompt();
+            const { outcome } = await deferredPrompt.userChoice;
+            if (outcome === 'accepted') {
+                prompt.remove();
+            }
+            deferredPrompt = null;
+        }
+    });
+
+    prompt.querySelector('.pwa-dismiss').addEventListener('click', () => {
+        prompt.remove();
+        localStorage.setItem('pwa_dismissed', 'true');
+    });
+}
+
+// ===== WHATSAPP FLOATING BUTTON =====
+function initWhatsAppButton() {
+    const waNumber = '6283108409959'; // Your WhatsApp number
+    const waMessage = encodeURIComponent('Halo Angga! Saya tertarik untuk berdiskusi dengan Anda.');
+
+    const waFloat = document.createElement('a');
+    waFloat.className = 'whatsapp-float';
+    waFloat.href = `https://wa.me/${waNumber}?text=${waMessage}`;
+    waFloat.target = '_blank';
+    waFloat.innerHTML = `
+        💬
+        <span class="tooltip">Chat via WhatsApp</span>
+    `;
+    document.body.appendChild(waFloat);
+}
+
+// ===== INITIALIZE ALL ADVANCED FEATURES =====
+document.addEventListener('DOMContentLoaded', function () {
+    initScrollProgress();
+    initThemeToggle();
+    initCustomCursor();
+    initLightbox();
+    initLazyLoading();
+    initShareButtons();
+    initPWA();
+    initWhatsAppButton();
+});
+
+// Export confetti function for use in form submission
+window.triggerConfetti = triggerConfetti;

@@ -5,7 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Projects - Angga Yoga Syahputra">
+    <meta name="theme-color" content="#0a0a1a">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>Angga Yoga | Projects</title>
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +21,7 @@
         rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=2.0">
 </head>
 
 <body>
@@ -37,15 +44,21 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
-            <a href="index.html" class="nav-logo">Angga Yoga</a>
+            <a href="index.html" class="nav-logo">Angga</a>
 
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="skills.html" class="nav-link">Skills</a></li>
-                <li><a href="projects.html" class="nav-link active">Projects</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="index.html" class="nav-link" data-i18n="nav_home">Beranda</a></li>
+                <li><a href="about.html" class="nav-link" data-i18n="nav_about">Tentang</a></li>
+                <li><a href="skills.html" class="nav-link" data-i18n="nav_skills">Keahlian</a></li>
+                <li><a href="projects.html" class="nav-link active" data-i18n="nav_projects">Proyek</a></li>
+                <li><a href="contact.html" class="nav-link" data-i18n="nav_contact">Kontak</a></li>
             </ul>
+
+            <!-- Language Toggle Button -->
+            <button class="lang-toggle" onclick="toggleLanguage()" aria-label="Toggle Language">
+                <span class="lang-icon">🌐</span>
+                <span class="lang-text">EN</span>
+            </button>
 
             <button class="nav-toggle" aria-label="Toggle Menu">
                 <span></span>
@@ -59,13 +72,14 @@
     <section class="section" style="padding-top: 120px;">
         <div class="container">
             <div class="section-header reveal">
-                <h2>My <span class="gradient-text">Projects</span></h2>
-                <p>Koleksi project yang telah dan sedang saya kerjakan</p>
+                <h2><span data-i18n="projects_prefix">Proyek</span> <span class="gradient-text"
+                        data-i18n="projects_suffix">Saya</span></h2>
+                <p data-i18n="projects_subtitle">Koleksi project yang telah dan sedang saya kerjakan</p>
             </div>
 
             <!-- Filter Buttons -->
             <div class="projects-filter reveal">
-                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn active" data-filter="all" data-i18n="filter_all">Semua</button>
                 <button class="filter-btn" data-filter="web">Web</button>
                 <button class="filter-btn" data-filter="iot">IoT</button>
                 <button class="filter-btn" data-filter="ai">AI</button>
@@ -89,7 +103,7 @@
                             <span class="project-tag">JavaScript</span>
                         </div>
                         <h3 class="project-title">Personal Portfolio</h3>
-                        <p class="project-desc">
+                        <p class="project-desc" data-i18n="project_portfolio_desc">
                             Website portfolio personal dengan desain modern,
                             animasi interaktif, dan responsive design.
                         </p>
@@ -112,7 +126,7 @@
                             <span class="project-tag">MySQL</span>
                         </div>
                         <h3 class="project-title">E-Commerce Website</h3>
-                        <p class="project-desc">
+                        <p class="project-desc" data-i18n="project_ecommerce_desc">
                             Website e-commerce dengan fitur keranjang belanja,
                             manajemen produk, dan sistem pembayaran.
                         </p>
@@ -135,7 +149,7 @@
                             <span class="project-tag">IoT</span>
                         </div>
                         <h3 class="project-title">Smart Home System</h3>
-                        <p class="project-desc">
+                        <p class="project-desc" data-i18n="project_smarthome_desc">
                             Sistem smart home dengan kontrol lampu, suhu,
                             dan keamanan berbasis IoT.
                         </p>
@@ -158,7 +172,7 @@
                             <span class="project-tag">ML</span>
                         </div>
                         <h3 class="project-title">Image Classification</h3>
-                        <p class="project-desc">
+                        <p class="project-desc" data-i18n="project_imgclass_desc">
                             Model machine learning untuk klasifikasi gambar
                             menggunakan neural network.
                         </p>
@@ -181,7 +195,7 @@
                             <span class="project-tag">API</span>
                         </div>
                         <h3 class="project-title">Dashboard Analytics</h3>
-                        <p class="project-desc">
+                        <p class="project-desc" data-i18n="project_dashboard_desc">
                             Dashboard interaktif untuk visualisasi data
                             dengan charts dan grafik real-time.
                         </p>
@@ -204,7 +218,7 @@
                             <span class="project-tag">Firebase</span>
                         </div>
                         <h3 class="project-title">Weather Monitoring</h3>
-                        <p class="project-desc">
+                        <p class="project-desc" data-i18n="project_weather_desc">
                             Sistem monitoring cuaca real-time dengan
                             sensor suhu, kelembaban, dan tekanan udara.
                         </p>
@@ -218,12 +232,14 @@
     <section class="section">
         <div class="container">
             <div class="card reveal" style="text-align: center; padding: 4rem 2rem;">
-                <h2>Lihat Lebih Banyak di <span class="gradient-text">GitHub</span></h2>
-                <p style="max-width: 600px; margin: 1rem auto 2rem;">
+                <h2><span data-i18n="github_cta_title">Lihat Lebih Banyak di</span> <span
+                        class="gradient-text">GitHub</span></h2>
+                <p style="max-width: 600px; margin: 1rem auto 2rem;" data-i18n="github_cta_desc">
                     Semua project saya tersedia di GitHub.
-                    Feel free untuk melihat source code dan berkontribusi!
+                    Silakan lihat source code dan berkontribusi!
                 </p>
-                <a href="https://github.com/anggayoga193-coder" class="btn btn-primary" target="_blank">
+                <a href="https://github.com/anggayoga193-coder" class="btn btn-primary" target="_blank"
+                    data-i18n="btn_visit_github">
                     Kunjungi GitHub 🐙
                 </a>
             </div>
@@ -233,11 +249,21 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Angga Yoga Syahputra</p>
-            <div class="footer-links">
-                <a href="https://github.com/anggayoga193-coder" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/in/angga-yoga-syahputra-a67832341" target="_blank">LinkedIn</a>
-                <a href="https://www.instagram.com/anggaaygaa" target="_blank">Instagram</a>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">Angga</a>
+                    <p class="footer-tagline">IT Student • Web Developer • Tech Enthusiast</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/anggayoga193-coder" target="_blank" title="GitHub">GitHub</a>
+                    <a href="https://www.linkedin.com/in/angga-yoga-syahputra-a67832341" target="_blank"
+                        title="LinkedIn">LinkedIn</a>
+                    <a href="https://www.instagram.com/anggaaygaa" target="_blank" title="Instagram">Instagram</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Angga Yoga Syahputra. All rights reserved.</p>
+                <p class="footer-location" data-i18n="footer_location">Malang, Indonesia</p>
             </div>
         </div>
     </footer>
@@ -246,7 +272,8 @@
     <button class="scroll-top" aria-label="Scroll to top">↑</button>
 
     <!-- JavaScript -->
-    <script src="js/main.js"></script>
+    <script src="js/translations.js?v=2.0"></script>
+    <script src="js/main.js?v=2.0"></script>
 </body>
 
 </html>
