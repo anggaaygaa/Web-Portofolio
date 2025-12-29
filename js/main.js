@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initContactForm();
     initSmoothScroll();
     initCounterAnimation();
+    initThemeToggle();
 });
 
 /* ===== PAGE LOADER ===== */
@@ -71,28 +72,26 @@ function initNavbar() {
     });
 }
 
-/* ===== PARTICLE BACKGROUND ===== */
+/* ===== PARTICLE BACKGROUND (OPTIMIZED) ===== */
 function initParticles() {
     const particlesContainer = document.querySelector('.particles');
     if (!particlesContainer) return;
 
-    const particleCount = 50;
+    // Reduced from 50 to 15 for better performance
+    const particleCount = 15;
 
     for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
         particle.classList.add('particle');
 
-        // Random position and animation
         particle.style.left = Math.random() * 100 + '%';
         particle.style.animationDelay = Math.random() * 15 + 's';
-        particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+        particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
 
-        // Random color
         const colors = ['#00d4ff', '#00ff88', '#8b5cf6', '#ec4899'];
         particle.style.background = colors[Math.floor(Math.random() * colors.length)];
 
-        // Random size
-        const size = Math.random() * 4 + 2;
+        const size = Math.random() * 3 + 2;
         particle.style.width = size + 'px';
         particle.style.height = size + 'px';
 
@@ -100,20 +99,28 @@ function initParticles() {
     }
 }
 
-/* ===== CURSOR GLOW EFFECT ===== */
+/* ===== CURSOR GLOW EFFECT (OPTIMIZED) ===== */
 function initCursorGlow() {
     const cursorGlow = document.querySelector('.cursor-glow');
     if (!cursorGlow) return;
 
-    // Only on desktop
-    if (window.innerWidth <= 768) {
+    // Disable on mobile and tablets
+    if (window.innerWidth <= 1024) {
         cursorGlow.style.display = 'none';
         return;
     }
 
+    // Throttled mousemove for better performance
+    let ticking = false;
     document.addEventListener('mousemove', (e) => {
-        cursorGlow.style.left = e.clientX + 'px';
-        cursorGlow.style.top = e.clientY + 'px';
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                cursorGlow.style.left = e.clientX + 'px';
+                cursorGlow.style.top = e.clientY + 'px';
+                ticking = false;
+            });
+            ticking = true;
+        }
     });
 }
 
@@ -494,111 +501,36 @@ function initRippleEffect() {
     });
 }
 
-// Card Tilt Effect
+// Card Tilt Effect (DISABLED for performance)
 function initTiltEffect() {
-    const cards = document.querySelectorAll('.card, .project-card');
-
-    cards.forEach(card => {
-        card.addEventListener('mousemove', function (e) {
-            const rect = this.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-
-            const rotateX = (y - centerY) / 20;
-            const rotateY = (centerX - x) / 20;
-
-            this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px) scale(1.02)`;
-        });
-
-        card.addEventListener('mouseleave', function () {
-            this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0) scale(1)';
-        });
-    });
+    // Tilt effect disabled to improve performance
+    // Cards still have CSS hover effects
+    return;
 }
 
-// Magnetic Buttons Effect
+// Magnetic Buttons Effect (DISABLED for performance)
 function initMagneticButtons() {
-    const magneticBtns = document.querySelectorAll('.btn-primary, .btn-secondary');
-
-    magneticBtns.forEach(btn => {
-        btn.addEventListener('mousemove', function (e) {
-            const rect = this.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
-
-            this.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px) translateY(-3px)`;
-        });
-
-        btn.addEventListener('mouseleave', function () {
-            this.style.transform = 'translate(0, 0) translateY(0)';
-        });
-    });
+    // Magnetic effect disabled to improve performance
+    // Buttons still have CSS hover effects
+    return;
 }
 
-// Enhanced Cursor Glow with Color Change
+// Enhanced Cursor Glow (DISABLED for performance)
 function initEnhancedCursorGlow() {
-    const cursorGlow = document.querySelector('.cursor-glow');
-    if (!cursorGlow || window.innerWidth <= 768) return;
-
-    const colors = [
-        'rgba(0, 212, 255, 0.15)',
-        'rgba(139, 92, 246, 0.15)',
-        'rgba(236, 72, 153, 0.15)',
-        'rgba(0, 255, 136, 0.15)'
-    ];
-    let colorIndex = 0;
-
-    setInterval(() => {
-        colorIndex = (colorIndex + 1) % colors.length;
-        cursorGlow.style.background = `radial-gradient(circle, ${colors[colorIndex]} 0%, transparent 70%)`;
-    }, 3000);
+    // Color cycling disabled to reduce CPU usage
+    return;
 }
 
-// Smooth Element Parallax
+// Smooth Element Parallax (DISABLED for performance)
 function initParallax() {
-    const parallaxElements = document.querySelectorAll('.hero-avatar, .blob');
-
-    window.addEventListener('scroll', () => {
-        const scrollY = window.scrollY;
-
-        parallaxElements.forEach((el, index) => {
-            const speed = 0.1 + (index * 0.05);
-            el.style.transform = `translateY(${scrollY * speed}px)`;
-        });
-    });
+    // Parallax disabled to reduce scroll lag
+    return;
 }
 
-// Text Scramble Effect for Skills
+// Text Scramble Effect (DISABLED for performance)
 function initTextScramble() {
-    const skillNames = document.querySelectorAll('.skill-name');
-    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-
-    skillNames.forEach(skill => {
-        const originalText = skill.textContent;
-
-        skill.addEventListener('mouseenter', function () {
-            let iterations = 0;
-            const interval = setInterval(() => {
-                this.textContent = originalText
-                    .split('')
-                    .map((char, index) => {
-                        if (index < iterations) {
-                            return originalText[index];
-                        }
-                        return chars[Math.floor(Math.random() * chars.length)];
-                    })
-                    .join('');
-
-                if (iterations >= originalText.length) {
-                    clearInterval(interval);
-                }
-                iterations += 1 / 2;
-            }, 30);
-        });
-    });
+    // Text scramble disabled to reduce CPU usage
+    return;
 }
 
 // Glowing Skill Percent
@@ -743,51 +675,11 @@ function triggerConfetti() {
     }, 4000);
 }
 
-// ===== CUSTOM ANIMATED CURSOR =====
+// ===== CUSTOM ANIMATED CURSOR (DISABLED) =====
 function initCustomCursor() {
-    // Only on desktop
-    if (window.innerWidth <= 768) return;
-
-    const cursor = document.createElement('div');
-    cursor.className = 'custom-cursor';
-    document.body.appendChild(cursor);
-
-    const cursorDot = document.createElement('div');
-    cursorDot.className = 'custom-cursor-dot';
-    document.body.appendChild(cursorDot);
-
-    let mouseX = 0, mouseY = 0;
-    let cursorX = 0, cursorY = 0;
-
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        cursorDot.style.left = mouseX + 'px';
-        cursorDot.style.top = mouseY + 'px';
-    });
-
-    // Smooth cursor follow
-    function animateCursor() {
-        cursorX += (mouseX - cursorX) * 0.1;
-        cursorY += (mouseY - cursorY) * 0.1;
-        cursor.style.left = cursorX + 'px';
-        cursor.style.top = cursorY + 'px';
-        requestAnimationFrame(animateCursor);
-    }
-    animateCursor();
-
-    // Hover effect on interactive elements
-    const hoverElements = document.querySelectorAll('a, button, .card, .project-card, input, textarea');
-    hoverElements.forEach(el => {
-        el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-        el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-    });
-
-    // Hide default cursor
-    document.body.style.cursor = 'none';
-    document.querySelectorAll('a, button').forEach(el => {
-        el.style.cursor = 'none';
-    });
+    // Custom cursor completely disabled to improve performance
+    // The requestAnimationFrame loop was causing significant CPU usage
+    return;
 }
 
 // ===== IMAGE LIGHTBOX =====

@@ -44,9 +44,9 @@ const translations = {
         about_suffix: "Saya",
         about_subtitle: "Mengenal lebih dekat tentang saya, perjalanan, dan passion saya",
         about_hello: "Halo! Saya",
-        about_description_1: "Saya adalah mahasiswa Program Studi Teknologi Informasi di Universitas Brawijaya, saat ini sedang menempuh semester 3 dan akan memasuki semester 4. Saya memiliki ketertarikan yang besar di bidang Web Development, Artificial Intelligence, Cyber Security, dan Internet of Things (IoT).",
-        about_description_2: "Passion saya terletak pada menciptakan solusi teknologi yang inovatif dan bermanfaat. Saya percaya bahwa teknologi dapat menjadi jembatan untuk menyelesaikan berbagai permasalahan di kehidupan sehari-hari.",
-        about_description_3: "Saya aktif sebagai member di Google Developer Group on Campus Universitas Brawijaya sejak November 2025, di mana saya terus belajar dan berkontribusi dalam komunitas developer.",
+        about_description_1: "Saya adalah mahasiswa Program Studi Teknologi Informasi di Universitas Brawijaya, saat ini sedang menempuh semester 3 dan akan memasuki semester 4. Dengan fokus pada pengembangan solusi digital yang inovatif, saya memiliki ketertarikan mendalam di bidang Web Development, Artificial Intelligence, Cyber Security, dan Internet of Things (IoT). Saya percaya bahwa kombinasi keempat bidang ini dapat menciptakan ekosistem teknologi yang powerful dan berdampak nyata bagi masyarakat.",
+        about_description_2: "Passion saya terletak pada menciptakan solusi teknologi yang tidak hanya inovatif, tetapi juga memberikan manfaat nyata bagi pengguna. Saya selalu berusaha mengikuti perkembangan teknologi terkini dan mengaplikasikannya dalam project-project yang saya kerjakan. Bagi saya, setiap baris kode adalah kesempatan untuk memecahkan masalah dan memberikan nilai tambah. Saya juga aktif mengeksplorasi machine learning dan neural networks untuk mengembangkan aplikasi cerdas yang dapat membantu kehidupan sehari-hari.",
+        about_description_3: "Di luar perkuliahan, saya aktif mengembangkan diri melalui berbagai komunitas dan program pengembangan. Saya adalah member aktif di Google Developer Group (GDG) on Campus Universitas Brawijaya sejak November 2025, di mana saya berkesempatan untuk belajar langsung dari para expert, berkolaborasi dalam project open source, dan berkontribusi dalam komunitas developer yang dinamis. Saya juga merupakan alumni Samsung Innovation Campus dan pernah menjadi Staff Magang di Kementerian Advokesma BEM UB, pengalaman yang memperkaya soft skills dan kemampuan leadership saya.",
 
         // Education & Experience
         edu_exp_prefix: "Pendidikan",
@@ -79,6 +79,17 @@ const translations = {
         connect_desc: "Tertarik untuk berdiskusi atau berkolaborasi? Jangan ragu untuk menghubungi saya!",
         btn_contact_me: "Hubungi Saya 📧",
         btn_see_projects: "Lihat Proyek 🚀",
+
+        // Affiliations Section
+        affiliations_title: "Afiliasi & Komunitas",
+        affil_ub_name: "Universitas Brawijaya",
+        affil_ub_role: "Mahasiswa Teknologi Informasi",
+        affil_gdg_name: "GDG on Campus UB",
+        affil_gdg_role: "Member",
+        affil_samsung_name: "Samsung Innovation Campus",
+        affil_samsung_role: "Peserta Program",
+        affil_bem_name: "BEM UB",
+        affil_bem_role: "Staff Kementerian Advokesma",
 
         // Skills Page
         skills_prefix: "Keahlian",
@@ -160,7 +171,11 @@ const translations = {
         faq_help_ans: "Mari diskusi! Tapi ingat, belajar sendiri itu lebih baik 😊",
 
         map_city: "Kota Malang, Jawa Timur",
-        map_btn: "Lihat di Google Maps 📍",
+        map_btn: "Lihat di Google Maps",
+        map_title_prefix: "Lokasi",
+        map_title_suffix: "Saya",
+        map_subtitle: "Temukan lokasi kampus dan daerah tempat tinggal saya",
+        map_location_title: "Universitas Brawijaya",
         response_time: "Biasanya membalas dalam 24-48 jam",
 
         // Dynamic Greeting
@@ -213,9 +228,9 @@ const translations = {
         about_suffix: "Me",
         about_subtitle: "Get to know me better, my journey, and my passion",
         about_hello: "Hello! I'm",
-        about_description_1: "I am a student of Information Technology at Brawijaya University, currently in my 3rd semester and about to enter 4th semester. I have a strong interest in Web Development, Artificial Intelligence, Cyber Security, and Internet of Things (IoT).",
-        about_description_2: "My passion lies in creating innovative and beneficial technology solutions. I believe that technology can be a bridge to solve various problems in everyday life.",
-        about_description_3: "I have been an active member of Google Developer Group on Campus at Brawijaya University since November 2025, where I continue to learn and contribute to the developer community.",
+        about_description_1: "I am a student of Information Technology at Brawijaya University, currently in my 3rd semester and about to enter the 4th semester. With a focus on developing innovative digital solutions, I have a deep interest in Web Development, Artificial Intelligence, Cyber Security, and Internet of Things (IoT). I believe that the combination of these four fields can create a powerful technology ecosystem that has a real impact on society.",
+        about_description_2: "My passion lies in creating technology solutions that are not only innovative but also provide real benefits to users. I always strive to keep up with the latest technology developments and apply them to the projects I work on. For me, every line of code is an opportunity to solve problems and add value. I am also actively exploring machine learning and neural networks to develop intelligent applications that can help everyday life.",
+        about_description_3: "Outside of academics, I actively develop myself through various communities and development programs. I have been an active member of Google Developer Group (GDG) on Campus at Brawijaya University since November 2025, where I have the opportunity to learn directly from experts, collaborate on open source projects, and contribute to a dynamic developer community. I am also an alumni of Samsung Innovation Campus and served as an Intern Staff at the Advokesma Ministry of BEM UB, experiences that enriched my soft skills and leadership abilities.",
 
         // Education & Experience
         edu_exp_prefix: "Education",
@@ -248,6 +263,17 @@ const translations = {
         connect_desc: "Interested in discussing or collaborating? Don't hesitate to contact me!",
         btn_contact_me: "Contact Me 📧",
         btn_see_projects: "View Projects 🚀",
+
+        // Affiliations Section
+        affiliations_title: "Affiliations & Communities",
+        affil_ub_name: "Brawijaya University",
+        affil_ub_role: "Information Technology Student",
+        affil_gdg_name: "GDG on Campus UB",
+        affil_gdg_role: "Member",
+        affil_samsung_name: "Samsung Innovation Campus",
+        affil_samsung_role: "Program Participant",
+        affil_bem_name: "BEM UB",
+        affil_bem_role: "Advokesma Ministry Staff",
 
         // Skills Page
         skills_prefix: "My",
@@ -329,7 +355,11 @@ const translations = {
         faq_help_ans: "Let's discuss! But remember, learning on your own is better 😊",
 
         map_city: "Malang City, East Java",
-        map_btn: "View on Google Maps 📍",
+        map_btn: "View on Google Maps",
+        map_title_prefix: "My",
+        map_title_suffix: "Location",
+        map_subtitle: "Find my campus location and area where I live",
+        map_location_title: "Brawijaya University",
         response_time: "Usually replies within 24-48 hours",
 
         // Dynamic Greeting
@@ -371,7 +401,8 @@ function updateLanguageButton() {
     if (langBtn) {
         const langText = langBtn.querySelector('.lang-text');
         if (langText) {
-            langText.textContent = currentLanguage === 'id' ? 'EN' : 'ID';
+            // Show current active language (EN when English, ID when Indonesian)
+            langText.textContent = currentLanguage === 'id' ? 'ID' : 'EN';
         }
     }
 }
