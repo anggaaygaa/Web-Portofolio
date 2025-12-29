@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact - Angga Yoga Syahputra">
+    <meta name="theme-color" content="#0a0a1a">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Angga Yoga | Contact</title>
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css?v=2.0">
+</head>
+
+<body>
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Cursor Glow Effect -->
+    <div class="cursor-glow"></div>
+
+    <!-- Particle Background -->
+    <div class="particles"></div>
+
+    <!-- Blob Decorations -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">Portofolio</a>
+
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link" data-i18n="nav_home">Beranda</a></li>
+                <li><a href="about.html" class="nav-link" data-i18n="nav_about">Tentang</a></li>
+                <li><a href="skills.html" class="nav-link" data-i18n="nav_skills">Keahlian</a></li>
+                <li><a href="projects.html" class="nav-link" data-i18n="nav_projects">Proyek</a></li>
+                <li><a href="contact.html" class="nav-link active" data-i18n="nav_contact">Kontak</a></li>
+            </ul>
+
+            <!-- Language Toggle Button -->
+            <button class="lang-toggle" onclick="toggleLanguage()" aria-label="Toggle Language">
+                <span class="lang-icon">🌐</span>
+                <span class="lang-text">EN</span>
+            </button>
+
+            <button class="nav-toggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="section" style="padding-top: 120px;">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2><span data-i18n="contact_prefix">Hubungi</span> <span class="gradient-text"
+                        data-i18n="contact_suffix">Saya</span></h2>
+                <p data-i18n="contact_subtitle">Punya pertanyaan atau ingin berkolaborasi? Hubungi saya!</p>
+            </div>
+
+            <div class="contact-content">
+                <!-- Contact Info -->
+                <div class="contact-info reveal">
+                    <h3><span data-i18n="connect_title">Mari</span> <span class="gradient-text-secondary"
+                            data-i18n="connect_span">Terhubung</span></h3>
+                    <p data-i18n="contact_intro">
+                        Saya selalu senang mendengar dari Anda! Baik itu untuk diskusi
+                        project, peluang kolaborasi, atau sekedar say hello, jangan ragu
+                        untuk menghubungi saya.
+                    </p>
+
+                    <!-- Response Time Indicator -->
+                    <div class="response-time">
+                        <span class="clock-icon">⏰</span>
+                        <span data-i18n="response_time">Biasanya membalas dalam 24-48 jam</span>
+                    </div>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p>anggayoga193@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div class="contact-text">
+                                <h4>WhatsApp</h4>
+                                <p>+62 831-0840-9959</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-text">
+                                <h4 data-i18n="contact_location">Lokasi</h4>
+                                <p data-i18n="location_value">Malang, Jawa Timur</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">🎓</div>
+                            <div class="contact-text">
+                                <h4 data-i18n="contact_campus">Kampus</h4>
+                                <p data-i18n="campus_value">Universitas Brawijaya</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 style="margin-bottom: 1rem;" data-i18n="contact_follow">Ikuti Saya</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/anggayoga" class="btn-icon" title="GitHub" target="_blank">
+                            <span style="font-size: 1.2rem;">🐙</span>
+                        </a>
+                        <a href="https://linkedin.com/in/anggayoga" class="btn-icon" title="LinkedIn" target="_blank">
+                            <span style="font-size: 1.2rem;">💼</span>
+                        </a>
+                        <a href="https://instagram.com/anggayoga" class="btn-icon" title="Instagram" target="_blank">
+                            <span style="font-size: 1.2rem;">📸</span>
+                        </a>
+                        <a href="https://wa.me/6283108409959" class="btn-icon" title="WhatsApp" target="_blank">
+                            <span style="font-size: 1.2rem;">💬</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="card contact-form reveal">
+                    <!-- 
+                        SETUP FORMSPREE:
+                        1. Buka https://formspree.io dan daftar gratis
+                        2. Buat form baru dan dapatkan form ID (contoh: xrgjoqwk)
+                        3. Ganti YOUR_FORMSPREE_ID di bawah dengan ID form Anda
+                        4. Pesan dari form akan dikirim ke email Anda!
+                    -->
+                    <form id="contactForm" action="https://formspree.io/f/mqekajkk" method="POST">
+                        <div class="form-group">
+                            <label for="name" data-i18n="form_name">Nama Lengkap *</label>
+                            <input type="text" id="name" name="name" data-i18n-placeholder="form_name_placeholder"
+                                placeholder="Masukkan nama Anda" required>
+                            <span class="error-message" data-i18n="form_name_error">Nama wajib diisi</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" data-i18n="form_email">Email *</label>
+                            <input type="email" id="email" name="email" placeholder="email@example.com" required>
+                            <span class="error-message" data-i18n="form_email_error">Email tidak valid</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject" data-i18n="form_subject">Subjek</label>
+                            <input type="text" id="subject" name="subject"
+                                data-i18n-placeholder="form_subject_placeholder" placeholder="Subjek pesan Anda">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" data-i18n="form_message">Pesan *</label>
+                            <textarea id="message" name="message" rows="5"
+                                data-i18n-placeholder="form_message_placeholder"
+                                placeholder="Tulis pesan Anda di sini..." required></textarea>
+                            <span class="error-message" data-i18n="form_message_error">Pesan wajib diisi</span>
+                        </div>
+
+                        <!-- Hidden field for redirect after submit -->
+                        <input type="hidden" name="_next" value="https://formspree.io/thanks">
+
+                        <button type="submit" class="btn btn-primary form-submit" data-i18n="form_submit">
+                            Kirim Pesan 📨
+                        </button>
+                    </form>
+
+                    <!-- Success Message -->
+                    <div class="form-success">
+                        <div class="form-success-icon">✅</div>
+                        <h3 data-i18n="form_success_title">Pesan Terkirim!</h3>
+                        <p data-i18n="form_success_desc">Terima kasih telah menghubungi saya. Saya akan segera membalas
+                            pesan Anda.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2><span data-i18n="faq_prefix">Pertanyaan</span> <span class="gradient-text"
+                        data-i18n="faq_suffix">Umum</span></h2>
+                <p data-i18n="faq_subtitle">Beberapa pertanyaan yang sering ditanyakan</p>
+            </div>
+
+            <div class="skills-grid reveal">
+                <div class="card">
+                    <h4 style="margin-bottom: 0.5rem;">💬 <span data-i18n="faq_response">Berapa lama waktu
+                            response?</span></h4>
+                    <p style="font-size: 0.95rem;" data-i18n="faq_response_ans">Biasanya saya akan membalas dalam 24-48
+                        jam.</p>
+                </div>
+                <div class="card card-purple">
+                    <h4 style="margin-bottom: 0.5rem;">🤝 <span data-i18n="faq_collab">Bisa kolaborasi project?</span>
+                    </h4>
+                    <p style="font-size: 0.95rem;" data-i18n="faq_collab_ans">Tentu! Saya terbuka untuk kolaborasi di
+                        bidang web, IoT, dan AI.</p>
+                </div>
+                <div class="card">
+                    <h4 style="margin-bottom: 0.5rem;">📚 <span data-i18n="faq_share">Bisa sharing knowledge?</span>
+                    </h4>
+                    <p style="font-size: 0.95rem;" data-i18n="faq_share_ans">Ya! Saya senang berdiskusi dan berbagi
+                        tentang teknologi.</p>
+                </div>
+                <div class="card card-purple">
+                    <h4 style="margin-bottom: 0.5rem;">🎓 <span data-i18n="faq_help">Bisa bantu tugas kuliah?</span>
+                    </h4>
+                    <p style="font-size: 0.95rem;" data-i18n="faq_help_ans">Mari diskusi! Tapi ingat, belajar sendiri
+                        itu lebih baik 😊</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Placeholder -->
+    <section class="section">
+        <div class="container">
+            <div class="card reveal" style="padding: 0; overflow: hidden; height: 300px;">
+                <div style="
+                    width: 100%; 
+                    height: 100%; 
+                    background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary));
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    gap: 1rem;
+                ">
+                    <span style="font-size: 4rem;">🗺️</span>
+                    <p data-i18n="map_city">Kota Malang, Jawa Timur</p>
+                    <a href="https://maps.google.com/maps?q=Universitas+Brawijaya+Malang" target="_blank"
+                        class="btn btn-secondary" data-i18n="map_btn">
+                        Lihat di Google Maps 📍
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">Portofolio</a>
+                    <p class="footer-tagline">IT Student • Web Developer • Tech Enthusiast</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/anggaaygaa" target="_blank" title="GitHub">GitHub</a>
+                    <a href="https://www.linkedin.com/in/angga-yoga-syahputra-a67832341" target="_blank"
+                        title="LinkedIn">LinkedIn</a>
+                    <a href="https://www.instagram.com/anggaaygaa" target="_blank" title="Instagram">Instagram</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Angga Yoga Syahputra. All rights reserved.</p>
+                <p class="footer-location" data-i18n="footer_location">Malang, Indonesia</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" aria-label="Scroll to top">↑</button>
+
+    <!-- JavaScript -->
+    <script src="js/translations.js?v=2.0"></script>
+    <script src="js/main.js?v=2.0"></script>
+</body>
+
+</html>

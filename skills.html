@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Skills - Angga Yoga Syahputra">
+    <meta name="theme-color" content="#0a0a1a">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Angga Yoga | Skills</title>
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css?v=2.0">
+</head>
+
+<body>
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Cursor Glow Effect -->
+    <div class="cursor-glow"></div>
+
+    <!-- Particle Background -->
+    <div class="particles"></div>
+
+    <!-- Blob Decorations -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">Portofolio</a>
+
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link" data-i18n="nav_home">Beranda</a></li>
+                <li><a href="about.html" class="nav-link" data-i18n="nav_about">Tentang</a></li>
+                <li><a href="skills.html" class="nav-link active" data-i18n="nav_skills">Keahlian</a></li>
+                <li><a href="projects.html" class="nav-link" data-i18n="nav_projects">Proyek</a></li>
+                <li><a href="contact.html" class="nav-link" data-i18n="nav_contact">Kontak</a></li>
+            </ul>
+
+            <!-- Language Toggle Button -->
+            <button class="lang-toggle" onclick="toggleLanguage()" aria-label="Toggle Language">
+                <span class="lang-icon">🌐</span>
+                <span class="lang-text">EN</span>
+            </button>
+
+            <button class="nav-toggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Skills Header -->
+    <section class="section" style="padding-top: 120px;">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2><span data-i18n="skills_prefix">Keahlian</span> <span class="gradient-text"
+                        data-i18n="skills_suffix">Saya</span></h2>
+                <p data-i18n="skills_subtitle">Teknologi dan bahasa pemrograman yang saya kuasai</p>
+            </div>
+
+            <!-- Technical Skills -->
+            <div class="skills-grid">
+                <!-- Frontend -->
+                <div class="card skill-category reveal">
+                    <h3><span>💻</span> <span data-i18n="frontend_dev">Pengembangan Frontend</span></h3>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">HTML</span>
+                            <span class="skill-percent">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="90"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">CSS</span>
+                            <span class="skill-percent">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">JavaScript</span>
+                            <span class="skill-percent">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="80"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">React.js</span>
+                            <span class="skill-percent">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="75"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="card card-purple skill-category reveal">
+                    <h3><span>⚙️</span> <span data-i18n="backend_dev">Pengembangan Backend</span></h3>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">PHP</span>
+                            <span class="skill-percent">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="80"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Laravel</span>
+                            <span class="skill-percent">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="75"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Python</span>
+                            <span class="skill-percent">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="80"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CSS Frameworks -->
+                <div class="card skill-category reveal">
+                    <h3><span>🎨</span> <span data-i18n="css_frameworks">Framework CSS</span></h3>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Bootstrap</span>
+                            <span class="skill-percent">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Tailwind CSS</span>
+                            <span class="skill-percent">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="80"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Special Interest -->
+                <div class="card card-purple skill-category reveal">
+                    <h3><span>🎯</span> <span data-i18n="special_interest">Minat Khusus</span></h3>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Artificial Intelligence</span>
+                            <span class="skill-percent">70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="70"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Internet of Things</span>
+                            <span class="skill-percent">70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="70"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Cyber Security</span>
+                            <span class="skill-percent">65%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="65"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Soft Skills -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2><span data-i18n="soft_skills_prefix">Soft</span> <span class="gradient-text-secondary"
+                        data-i18n="soft_skills_suffix">Skills</span></h2>
+                <p data-i18n="soft_skills_subtitle">Kemampuan non-teknis yang mendukung saya</p>
+            </div>
+
+            <div class="skills-grid reveal">
+                <div class="card">
+                    <h3><span>🧩</span> <span data-i18n="problem_solving">Problem Solving</span></h3>
+                    <p data-i18n="problem_solving_desc">Menganalisis masalah kompleks dan menemukan solusi kreatif yang
+                        efektif.</p>
+                </div>
+                <div class="card card-purple">
+                    <h3><span>📚</span> <span data-i18n="fast_learner">Pembelajar Cepat</span></h3>
+                    <p data-i18n="fast_learner_desc">Cepat dalam mempelajari teknologi dan konsep baru.</p>
+                </div>
+                <div class="card">
+                    <h3><span>👥</span> <span data-i18n="teamwork">Kerja Tim</span></h3>
+                    <p data-i18n="teamwork_desc">Bekerja sama dalam tim untuk mencapai tujuan bersama.</p>
+                </div>
+                <div class="card card-purple">
+                    <h3><span>🔄</span> <span data-i18n="adaptability">Adaptabilitas</span></h3>
+                    <p data-i18n="adaptability_desc">Cepat beradaptasi dengan teknologi dan perubahan baru.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Currently Learning -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2><span data-i18n="currently_learning_prefix">Sedang</span> <span class="gradient-text"
+                        data-i18n="currently_learning_suffix">Dipelajari</span></h2>
+                <p data-i18n="currently_learning_subtitle">Teknologi yang sedang saya pelajari</p>
+            </div>
+
+            <div class="skills-grid reveal">
+                <div class="card">
+                    <h4 style="color: var(--accent-cyan); margin-bottom: 0.5rem;">🤖 Machine Learning</h4>
+                    <p style="font-size: 0.9rem;" data-i18n="ml_desc">Deep learning dan neural networks dengan Python
+                    </p>
+                </div>
+                <div class="card card-purple">
+                    <h4 style="color: var(--accent-purple); margin-bottom: 0.5rem;">📡 IoT Development</h4>
+                    <p style="font-size: 0.9rem;" data-i18n="iot_desc">Arduino, ESP32, dan integrasi sensor</p>
+                </div>
+                <div class="card">
+                    <h4 style="color: var(--accent-cyan); margin-bottom: 0.5rem;">🔐 Security Fundamentals</h4>
+                    <p style="font-size: 0.9rem;" data-i18n="security_desc">Keamanan jaringan dan dasar ethical hacking
+                    </p>
+                </div>
+                <div class="card card-purple">
+                    <h4 style="color: var(--accent-purple); margin-bottom: 0.5rem;">☁️ Cloud Computing</h4>
+                    <p style="font-size: 0.9rem;" data-i18n="cloud_desc">Google Cloud Platform dan deployment</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">Portofolio</a>
+                    <p class="footer-tagline">IT Student • Web Developer • Tech Enthusiast</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/anggaaygaa" target="_blank" title="GitHub">GitHub</a>
+                    <a href="https://www.linkedin.com/in/angga-yoga-syahputra-a67832341" target="_blank"
+                        title="LinkedIn">LinkedIn</a>
+                    <a href="https://www.instagram.com/anggaaygaa" target="_blank" title="Instagram">Instagram</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Angga Yoga Syahputra. All rights reserved.</p>
+                <p class="footer-location" data-i18n="footer_location">Malang, Indonesia</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" aria-label="Scroll to top">↑</button>
+
+    <!-- JavaScript -->
+    <script src="js/translations.js?v=2.0"></script>
+    <script src="js/main.js?v=2.0"></script>
+</body>
+
+</html>

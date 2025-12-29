@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Angga Yoga Syahputra - Web Developer, AI Engineer, IoT Engineer">
+    <meta name="theme-color" content="#0a0a1a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Disable caching during development -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Angga Yoga | Portfolio</title>
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css?v=2.0">
+</head>
+
+<body>
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Cursor Glow Effect -->
+    <div class="cursor-glow"></div>
+
+    <!-- Particle Background -->
+    <div class="particles"></div>
+
+    <!-- Blob Decorations -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <!-- Floating Icons Background -->
+    <div class="floating-icons">
+        <div class="floating-icon">💻</div>
+        <div class="floating-icon">🚀</div>
+        <div class="floating-icon">⚡</div>
+        <div class="floating-icon">🎨</div>
+        <div class="floating-icon">🔧</div>
+        <div class="floating-icon">📱</div>
+        <div class="floating-icon">🌐</div>
+        <div class="floating-icon">✨</div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">Portofolio</a>
+
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active" data-i18n="nav_home">Beranda</a></li>
+                <li><a href="about.html" class="nav-link" data-i18n="nav_about">Tentang</a></li>
+                <li><a href="skills.html" class="nav-link" data-i18n="nav_skills">Keahlian</a></li>
+                <li><a href="projects.html" class="nav-link" data-i18n="nav_projects">Proyek</a></li>
+                <li><a href="contact.html" class="nav-link" data-i18n="nav_contact">Kontak</a></li>
+            </ul>
+
+            <!-- Language Toggle Button -->
+            <button class="lang-toggle" onclick="toggleLanguage()" aria-label="Toggle Language">
+                <span class="lang-icon">🌐</span>
+                <span class="lang-text">EN</span>
+            </button>
+
+            <button class="nav-toggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text reveal">
+                    <!-- Availability Badge -->
+                    <div class="availability-badge" data-i18n="availability_badge">
+                        Available for Work
+                    </div>
+                    <p class="subtitle dynamic-greeting" data-i18n="hero_welcome">Selamat Datang</p>
+                    <h1><span data-i18n="hero_greeting">Halo, Saya</span> <span class="gradient-text">Angga Yoga</span>
+                    </h1>
+                    <p class="typing-container">
+                        <span data-i18n="hero_intro">Saya adalah seorang</span>
+                        <span class="typing-text"
+                            data-texts="Web Developer,AI Engineer,Cyber Security,IoT Engineer"></span>
+                    </p>
+                    <p data-i18n="hero_description">
+                        Mahasiswa Teknologi Informasi di Universitas Brawijaya yang passionate
+                        dalam pengembangan web, kecerdasan buatan, dan Internet of Things.
+                        Mari berkolaborasi untuk mewujudkan ide-ide inovatif!
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="projects.html" class="btn btn-primary" data-i18n="hero_btn_projects">
+                            Lihat Project 🚀
+                        </a>
+                        <a href="contact.html" class="btn btn-secondary" data-i18n="hero_btn_contact">
+                            Hubungi Saya 📧
+                        </a>
+                        <a href="#" class="btn btn-download" data-i18n="hero_btn_cv">
+                            <span class="download-icon">📄</span> Download CV
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-image reveal">
+                    <div class="hero-avatar">
+                        <img src="images/IMG-20251109-WA0022.jpg" alt="Angga Yoga Syahputra">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats Section -->
+    <section class="section">
+        <div class="container">
+            <div class="about-stats reveal" style="justify-content: center; gap: 4rem;">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="3">0+</div>
+                    <div class="stat-label" data-i18n="stat_semester">Semester</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="8">0+</div>
+                    <div class="stat-label" data-i18n="stat_technologies">Teknologi</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="4">0+</div>
+                    <div class="stat-label" data-i18n="stat_expertise">Bidang Keahlian</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Skills Preview -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2><span data-i18n="featured_skills_prefix">Keahlian</span> <span class="gradient-text"
+                        data-i18n="featured_skills_suffix">Unggulan</span></h2>
+                <p data-i18n="featured_skills_subtitle">Teknologi yang saya kuasai untuk membangun solusi digital</p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="card reveal">
+                    <h3><span>💻</span> Web Development</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">React.js</span>
+                    </div>
+                </div>
+
+                <div class="card card-purple reveal">
+                    <h3><span>🤖</span> AI & IoT</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">IoT Development</span>
+                    </div>
+                </div>
+
+                <div class="card reveal">
+                    <h3><span>🎨</span> Frameworks</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Laravel</span>
+                        <span class="skill-tag">Bootstrap</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;" class="reveal">
+                <a href="skills.html" class="btn btn-secondary" data-i18n="btn_see_all_skills">Lihat Semua Keahlian
+                    →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section">
+        <div class="container">
+            <div class="card reveal" style="text-align: center; padding: 4rem 2rem;">
+                <h2><span data-i18n="cta_collaborate">Tertarik untuk</span> <span class="gradient-text-secondary"
+                        data-i18n="cta_collaborate_span">Berkolaborasi</span>?</h2>
+                <p style="max-width: 600px; margin: 1rem auto 2rem;" data-i18n="cta_description">
+                    Saya selalu terbuka untuk diskusi tentang project baru,
+                    ide kreatif, atau kesempatan kolaborasi di bidang teknologi.
+                </p>
+                <a href="contact.html" class="btn btn-primary" data-i18n="cta_btn">
+                    Mari Bicara! 💬
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Marquee -->
+    <div class="tech-marquee-container">
+        <div class="tech-marquee">
+            <div class="tech-item"><span>⚡</span> HTML5</div>
+            <div class="tech-item"><span>🎨</span> CSS3</div>
+            <div class="tech-item"><span>📜</span> JavaScript</div>
+            <div class="tech-item"><span>⚛️</span> React.js</div>
+            <div class="tech-item"><span>🐘</span> PHP</div>
+            <div class="tech-item"><span>🔥</span> Laravel</div>
+            <div class="tech-item"><span>🐍</span> Python</div>
+            <div class="tech-item"><span>🤖</span> AI/ML</div>
+            <div class="tech-item"><span>📡</span> IoT</div>
+            <div class="tech-item"><span>🔒</span> Security</div>
+            <div class="tech-item"><span>💾</span> MySQL</div>
+            <div class="tech-item"><span>🎯</span> Bootstrap</div>
+            <!-- Duplicate for seamless loop -->
+            <div class="tech-item"><span>⚡</span> HTML5</div>
+            <div class="tech-item"><span>🎨</span> CSS3</div>
+            <div class="tech-item"><span>📜</span> JavaScript</div>
+            <div class="tech-item"><span>⚛️</span> React.js</div>
+            <div class="tech-item"><span>🐘</span> PHP</div>
+            <div class="tech-item"><span>🔥</span> Laravel</div>
+            <div class="tech-item"><span>🐍</span> Python</div>
+            <div class="tech-item"><span>🤖</span> AI/ML</div>
+            <div class="tech-item"><span>📡</span> IoT</div>
+            <div class="tech-item"><span>🔒</span> Security</div>
+            <div class="tech-item"><span>💾</span> MySQL</div>
+            <div class="tech-item"><span>🎯</span> Bootstrap</div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">Portofolio</a>
+                    <p class="footer-tagline">IT Student • Web Developer • Tech Enthusiast</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/anggaaygaa" target="_blank" title="GitHub">
+                        <span class="social-icon">GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/angga-yoga-syahputra-a67832341" target="_blank"
+                        title="LinkedIn">
+                        <span class="social-icon">LinkedIn</span>
+                    </a>
+                    <a href="https://www.instagram.com/anggaaygaa" target="_blank" title="Instagram">
+                        <span class="social-icon">Instagram</span>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Angga Yoga Syahputra. All rights reserved.</p>
+                <p class="footer-location" data-i18n="footer_location">Malang, Indonesia</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" aria-label="Scroll to top">↑</button>
+
+    <!-- JavaScript -->
+    <script src="js/translations.js?v=2.0"></script>
+    <script src="js/main.js?v=2.0"></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => console.log('SW registered'))
+                    .catch(err => console.log('SW registration failed'));
+            });
+        }
+    </script>
+</body>
+
+</html>
